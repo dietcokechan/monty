@@ -8,5 +8,12 @@
  */
 int main(int argc, char **argv)
 {
-    exit(status);
+	if (argc == 2)
+		handle_cmd(argv[1]);
+	else
+	{
+		dprintf(STDERR_FILENO, "USAGE: monty file\n");
+		exit(1);
+	}
+	return (0);
 }
