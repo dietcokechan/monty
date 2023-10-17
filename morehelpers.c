@@ -13,7 +13,7 @@ stack_t *add_node(int n)
 	if (node == NULL)
 	{
 		dprintf(STDERR_FILENO, "Error: failed to allocate memory\n");
-		exit(1);
+		exit(EXIT_FAILURE);
 	}
 	node->n = n;
 	node->next = NULL;
@@ -42,4 +42,22 @@ int _isdigit(char *c)
 			return (0);
 	}
 	return (1);
+}
+
+/**
+ * cleanup - frees mallocs and closes files
+ * @stack: stack
+ * Return: nothing
+ */
+void cleanup(stack_t **stack)
+{
+	stack_t *curr = *stack;
+
+	for (; curr; curr = *stack)
+	{
+		*stack = (*stack)->next;
+		free(curr);
+	}
+	fclose(global.fd);
+	free(global.line);
 }

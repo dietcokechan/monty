@@ -13,7 +13,7 @@ int main(int argc, char **argv)
 	else
 	{
 		dprintf(STDERR_FILENO, "USAGE: monty file\n");
-		exit(1);
+		exit(EXIT_FAILURE);
 	}
 	return (0);
 }

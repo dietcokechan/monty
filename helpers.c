@@ -35,14 +35,14 @@ void handle_cmd(char *argv)
 			else if (res == 2)
 				ins_error(global.fd, global.line, stack, args, count);
 		}
-		free (global.line);
+		free(global.line);
 		free_dlist(stack);
 		fclose(global.fd);
 	}
 	else
 	{
 		dprintf(STDERR_FILENO, "Error: Can't open file %s\n", argv);
-		exit(1);
+		exit(EXIT_FAILURE);
 	}
 }
 
