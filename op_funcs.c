@@ -23,6 +23,7 @@ int get_op(stack_t **stack, char *arg, char *i, int count)
 		{"swap", _swap},
 		{"add", _add},
 		{"nop", _nop},
+		{"sub", _sub},
 		{NULL, NULL}};
 
 	while (ops[j].opcode)
