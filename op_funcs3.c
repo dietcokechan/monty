@@ -50,3 +50,26 @@ void _div(stack_t **stack, unsigned int line_num)
 	curr->next->n = div;
 	_pop(stack, line_num);
 }
+
+/**
+ * _mul - multiplies the second top with the top element.
+ * @stack: Stack.
+ * @line_num: Number of line
+ */
+void _mul(stack_t **stack, unsigned int line_num)
+{
+	stack_t *curr = NULL;
+	int mul = 0;
+
+	if (!*stack || !(*stack)->next)
+	{
+		fprintf(stderr, "L%d: can't mul, stack too short\n", line_num);
+		cleanup(stack);
+		exit(EXIT_FAILURE);
+	}
+	curr = *stack;
+
+	mul = curr->next->n * curr->n;
+	_pop(stack, line_num);
+	curr->next->n = mul;
+}
