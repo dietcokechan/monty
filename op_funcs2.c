@@ -69,3 +69,15 @@ void _add(stack_t **stack, unsigned int line_num)
 	curr->next->n = sum;
 	_pop(stack, line_num);
 }
+
+/**
+ * _nop - does nothing
+ * @stack: stack
+ * @line_num: line number
+ * Return: nothing
+ */
+void _nop(stack_t **stack, unsigned int line_num)
+{
+	(void)stack;
+	(void)line_num;
+}

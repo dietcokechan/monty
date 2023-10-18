@@ -73,6 +73,7 @@ void _pint(stack_t **stack, unsigned int line_num);
 void _pop(stack_t **stack, unsigned int line_num);
 void _swap(stack_t **stack, unsigned int line_num);
 void _add(stack_t **stack, unsigned int line_num);
+void _nop(stack_t **stack, unsigned int line_num);
 
 /* ERROR HANDLING */
 void push_error(FILE *fd, char *line, stack_t *stack, int count);
