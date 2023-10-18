@@ -20,6 +20,7 @@ int get_op(stack_t **stack, char *arg, char *i, int count)
 		{"pall", _pall},
 		{"pint", _pint},
 		{"pop", _pop},
+		{"swap", _swap},
 		{NULL, NULL}};
 
 	while (ops[j].opcode)
