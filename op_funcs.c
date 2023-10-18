@@ -24,6 +24,7 @@ int get_op(stack_t **stack, char *arg, char *i, int count)
 		{"add", _add},
 		{"nop", _nop},
 		{"sub", _sub},
+		{"div", _div},
 		{NULL, NULL}};
 
 	while (ops[j].opcode)
